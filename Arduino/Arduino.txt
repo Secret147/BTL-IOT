@@ -1,0 +1,10 @@
+những thứ cần lưu trên code adrunio
+- ngày bắt đầu sử dụng hệ thống để tính được giai đoạn của cây
+- 
+- thời gian bắt đầu sáng ban ngày(lấy ra giờ và phút) và ngày lấy dữ liệu (getDay của ds1307)
+- thời gian bắt đầu tối (lấy ra giờ và phút) - tìm kiếm với điều kiện là ngày lấy dữ liệu
+những thứ cần xử lí trên code adrunio
+- sau khi trời tối tính ra thời gian thắp sáng thêm bằng cách:
+   1. Lấy giai đoạn của cây trong database
+   2. Lấy thời gian bắt đầu sáng ban ngày trừ đi thời gian bắt đầu tối lấy từ database 
+   3. Tính ra thời điểm dừng sáng của đèn để tắt đèn
