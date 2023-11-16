@@ -1,5 +1,9 @@
-import ManagerLabel from '../pages/ManagerLabel/ManagerLabel';
+import Home from '../pages/Home';
+import IOT from '../pages/ManagerLabel/IOT';
 
-const publicRoutes = [{ path: '/', component: ManagerLabel }];
+const publicRoutes = [
+    { path: '/list', component: IOT },
+    { path: '/', component: Home },
+];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };
