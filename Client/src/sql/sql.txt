@@ -1,0 +1,6 @@
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-17', '18:02:14', '07:15:18');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-18', '18:00:14', '7:16:14');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-19', '17:59:16', '07:02:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-20', '17:58:12', '07:10:42');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-21', '18:10:15', '07:14:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-22', '18:13:14', '07:00:01');
