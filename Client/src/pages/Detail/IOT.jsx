@@ -52,12 +52,12 @@ function IOT() {
         getConsuat();
     }, []);
     const timeLight = (totalSeconds) => {
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const hours = Math.round(totalSeconds / 3600);
+        const minutes = Math.round((totalSeconds % 3600) / 60);
         const formattedTime = `${hours} giờ ${minutes} phút`;
         console.log(totalSeconds);
         setTime(formattedTime);
-        setCongsuat(Math.floor((totalSeconds * (index.congsuat / 1000)) / 3600) + 1);
+        setCongsuat(((totalSeconds * (index.congsuat / 1000)) / 3600).toFixed(2));
         console.log('congsuat:' + index.congsuat);
     };
     useEffect(() => {

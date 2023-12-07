@@ -191,16 +191,14 @@ function IndexIot() {
                                 <div className={cx('index_item')}>
                                     <div className={cx('index_item_box')}>
                                         <div className={cx('index_item_left', 'font_size')}>
-                                            <p>
-                                                Tổng số điện hệ thống tiêu thụ: {Math.floor(congsuat * sumtime + 1)} kWh
-                                            </p>
+                                            <p>Tổng số điện hệ thống tiêu thụ: {(congsuat * sumtime).toFixed(2)} kWh</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className={cx('index_item')}>
                                     <div className={cx('index_item_box')}>
                                         <div className={cx('index_item_left', 'font_size')}>
-                                            <p>Tổng tiền điện: {Math.floor(congsuat * sumtime + 1) * price} đ</p>
+                                            <p>Tổng tiền điện: {Math.round(congsuat * sumtime * price)} đ</p>
                                         </div>
                                     </div>
                                 </div>

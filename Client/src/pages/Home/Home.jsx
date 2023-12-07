@@ -11,7 +11,7 @@ import axios2 from '../../service/axios2';
 const cx = classNames.bind(styles);
 function Home() {
     const history = useNavigate();
-    const [sumTime, setSumtime] = useState();
+    const [sumTime, setSumtime] = useState(0);
     const [priceElectric, setPriceElectric] = useState(3500);
     const [congsuatDen, setCongsuatden] = useState(0.1);
     const [index, setIndex] = useState({
@@ -42,7 +42,7 @@ function Home() {
                         <div className={cx('main_front_box_left')}>
                             <div className={cx('main_front_left', 'left')}>
                                 <div className={cx('main_front_left_box', 'left_color')}>
-                                    <p>{Math.floor(sumTime) + 1}</p>
+                                    <p>{sumTime.toFixed(2)}</p>
                                     <FontAwesomeIcon icon={faLightbulb} />
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ function Home() {
                         <div className={cx('main_front_box_right')}>
                             <div className={cx('main_front_left')}>
                                 <div className={cx('main_front_left_box')}>
-                                    <p>{Math.floor(sumTime * (index.congsuat / 1000)) + 1}</p>
+                                    <p>{(sumTime * (index.congsuat / 1000)).toFixed(2)}</p>
                                     <FontAwesomeIcon icon={faBolt} />
                                 </div>
                             </div>
