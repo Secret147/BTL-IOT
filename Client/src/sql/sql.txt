@@ -4,3 +4,26 @@ INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-19'
 INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-20', '17:58:12', '07:10:42');
 INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-21', '18:10:15', '07:14:15');
 INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-22', '18:13:14', '07:00:01');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-27', '18:55:51', '07:12:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-28', '17:14:17', '07:01:16');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-29', '18:44:11', '07:41:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-11-30', '17:12:16', '07:00:16');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-12-01', '18:45:17', '07:14:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-12-02', '17:12:14', '07:21:16');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-12-03', '18:22:44', '07:41:15');
+INSERT INTO `dbb`.`sensor` (`date_storage`, `end`, `start`) VALUES ('2023-12-04', '17:55:17', '07:24:16');
+UPDATE `dbb`.`sensor` SET `time_light` = '15184' WHERE (`id` = '1');
+UPDATE `dbb`.`sensor` SET `time_light` = '15360' WHERE (`id` = '2');
+UPDATE `dbb`.`sensor` SET `time_light` = '14579' WHERE (`id` = '3');
+UPDATE `dbb`.`sensor` SET `time_light` = '15150' WHERE (`id` = '4');
+UPDATE `dbb`.`sensor` SET `time_light` = '14640' WHERE (`id` = '5');
+UPDATE `dbb`.`sensor` SET `time_light` = '13607' WHERE (`id` = '6');
+UPDATE `dbb`.`sensor` SET `time_light` = '14340' WHERE (`id` = '7');
+UPDATE `dbb`.`sensor` SET `time_light` = '13104' WHERE (`id` = '8');
+UPDATE `dbb`.`sensor` SET `time_light` = '15719' WHERE (`id` = '9');
+UPDATE `dbb`.`sensor` SET `time_light` = '16144' WHERE (`id` = '10');
+UPDATE `dbb`.`sensor` SET `time_light` = '11784' WHERE (`id` = '11');
+UPDATE `dbb`.`sensor` SET `time_light` = '17219' WHERE (`id` = '12');
+UPDATE `dbb`.`sensor` SET `time_light` = '14224' WHERE (`id` = '13');
+UPDATE `dbb`.`sensor` SET `time_light` = '17280' WHERE (`id` = '14');
+
