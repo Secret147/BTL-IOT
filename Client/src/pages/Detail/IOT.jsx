@@ -142,6 +142,16 @@ function IOT() {
                             </div>
                         </div>
                     </div>
+                    <div
+                        className={cx('chart_button')}
+                        onClick={() => {
+                            window.location.href = '/test';
+                        }}
+                    >
+                        <div className={cx('chart_button_main')}>
+                            <p>Xem biểu đồ thống kê</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

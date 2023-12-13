@@ -6,11 +6,22 @@
 }
 .option {
     position: absolute;
-    right: 48px;
-    top: 0px;
+    display: flex;
+    right: 50px;
+    top: -2px;
     width: 64px;
     z-index: 100;
+    justify-content: center;
+    align-items: center;
     select {
         height: 32px;
     }
+}
+.back {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 16px;
+}
+.back:hover {
+    opacity: 0.6;
 }

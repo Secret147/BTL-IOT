@@ -21,33 +21,69 @@ function IndexIot() {
         giadien: '',
         thoigiancanthapsang: '',
     });
+
+    const [gio, setGio] = useState('');
+    const [phut, setPhut] = useState('');
+
     const history = useNavigate();
+
     const getSumTime = async () => {
         const res = await axios.get('/sum');
         setSumtime(res.data.results[0] / 3600);
         console.log(res.data.results[0]);
     };
+
     const getConsuat = async () => {
         const res = await axios2.get('/count');
         setPrice(res.data[0].giadien);
         setCongsuat(res.data[0].congsuat / 1000);
         setIndex(res.data[0]);
     };
+
     useEffect(() => {
         getSumTime();
         getConsuat();
     }, []);
+
     const onClickPopup = () => {
         setCheckPopup(true);
+        setGio(index.thoigiancanthapsang ? (index.thoigiancanthapsang / 3600).toString() : '');
+        setPhut(index.thoigiancanthapsang ? ((index.thoigiancanthapsang % 3600) / 60).toString() : '');
+
         console.log(checkPopup);
     };
+
     const handleCloseDetail = () => {
         setCheckPopup(false);
     };
+
     const handleInput = (e) => {
         const { name, value } = e.target;
-        setIndex({ ...index, [name]: value });
+
+        if (name === 'gio' || name === 'phut') {
+            if (name === 'gio') {
+                setGio(value);
+            }
+            if (name === 'phut') {
+                setPhut(value);
+            }
+
+            const gioValue = parseInt(name === 'gio' ? value : gio, 10) || 0;
+            const phutValue = parseInt(name === 'phut' ? value : phut, 10) || 0;
+
+            console.log(gioValue + ' gio');
+            console.log(phutValue + ' phut');
+            const thoigiancanthapsang = (gioValue * 3600 + phutValue * 60).toString();
+
+            setIndex((prevIndex) => ({
+                ...prevIndex,
+                thoigiancanthapsang,
+            }));
+        } else {
+            setIndex({ ...index, [name]: value });
+        }
     };
+
     const handleEdit = async () => {
         const res = await axios2.put('/newindex', index);
         if (res.status === 200) {
@@ -60,7 +96,6 @@ function IndexIot() {
             toast.error('Thay đổi thất bại!');
         }
     };
-
     return (
         <div className={cx('container')}>
             <Back></Back>
@@ -103,15 +138,26 @@ function IndexIot() {
                             </div>
                             <div className={cx('popup_item_box')}>
                                 <div className={cx('popup_item_label')}>
-                                    <p>Đơn giá điện</p>
+                                    <p>Thời gian cần cho cây</p>
                                 </div>
-                                <input
-                                    type="text"
-                                    placeholder="Nhập đơn giá điện"
-                                    onChange={handleInput}
-                                    name="thoigiancanthapsang"
-                                    value={index.thoigiancanthapsang}
-                                ></input>
+                                <div className={cx('hour_m')}>
+                                    <p>Giờ</p>
+                                    <input
+                                        type="text"
+                                        placeholder="Nhập giờ"
+                                        onChange={handleInput}
+                                        name="gio"
+                                        value={Math.round(gio)}
+                                    ></input>
+                                    <p>Phút</p>
+                                    <input
+                                        type="text"
+                                        placeholder="Nhập phút"
+                                        onChange={handleInput}
+                                        name="phut"
+                                        value={Math.round(phut)}
+                                    ></input>
+                                </div>
                             </div>
                             <div className={cx('pop_up_button')}>
                                 <div
@@ -174,7 +220,10 @@ function IndexIot() {
                                 <div className={cx('index_item')}>
                                     <div className={cx('index_item_box')}>
                                         <div className={cx('index_item_left')}>
-                                            <p>Thời gian cần thắp sáng: {index.thoigiancanthapsang} giờ</p>
+                                            <p>
+                                                Thời gian cần thắp sáng: {(index.thoigiancanthapsang / 3600).toFixed(2)}{' '}
+                                                giờ
+                                            </p>
                                         </div>
                                         <div className={cx('index_item_right')}>
                                             <div

@@ -3,6 +3,8 @@ import ChartComponent from '../../components/chartComponent';
 import styles from './test.module.scss';
 import classNames from 'classnames/bind';
 import axios from '../../service/axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCancel, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -68,6 +70,7 @@ function Test() {
             setChecked(true);
         }
     };
+    console.log(yearData);
 
     useEffect(() => {
         getData();
@@ -102,6 +105,14 @@ function Test() {
                     </optgroup>
                     <option value={'all'}>Tất cả</option>
                 </select>
+                <div
+                    className={cx('back')}
+                    onClick={() => {
+                        window.location.href = '/list';
+                    }}
+                >
+                    <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>
+                </div>
             </div>
             <ChartComponent dataChart={dataChart} checked={checked}></ChartComponent>
         </div>

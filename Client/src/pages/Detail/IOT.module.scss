@@ -208,3 +208,25 @@
 .left_color {
     color: rgb(10, 207, 10) !important;
 }
+.chart_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+.chart_button:hover {
+    opacity: 0.8;
+}
+.chart_button_main {
+    width: 40%;
+    background: var(--edit);
+    border-radius: 4px;
+    user-select: none;
+    p {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        padding: 16px 0;
+    }
+}

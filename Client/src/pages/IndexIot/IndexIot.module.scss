@@ -207,3 +207,12 @@
 .pop_up_button_main:hover {
     opacity: 0.6;
 }
+.hour_m {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    input {
+        margin-bottom: 8px;
+    }
+}
